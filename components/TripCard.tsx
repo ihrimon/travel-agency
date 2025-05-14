@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router';
+import { Link } from 'react-router';
 import {
   ChipDirective,
   ChipListComponent,
@@ -14,17 +14,15 @@ const TripCard = ({
   tags,
   price,
 }: TripCardProps) => {
-  const path = useLocation();
+  // const path = useLocation();
+
+  // const linkPath =
+  //   path.pathname === '/' || path?.pathname?.startsWith('/travel')
+  //     ? `/travel/${id}`
+  //     : `/trips/${id}`;
 
   return (
-    <Link
-      to={
-        path.pathname === '/' || path.pathname.startsWith('/travel')
-          ? `/travel/${id}`
-          : `/trips/${id}`
-      }
-      className='trip-card'
-    >
+    <Link to={'/'} className='trip-card'>
       <img src={imageUrl} alt={name} />
 
       <article>
